@@ -64,3 +64,6 @@
   - DATASET = 'ORL'
   - DATASET = 'MNIST'
   - DATASET = 'CIFAR'
+  - ORL usage: command line 48, use line 49 
+  - MNIST usage: command line 49, change the channel size to 1 in line 48
+  - CIFAR usage: command line 49, change the channel size to 3 in line 48 
