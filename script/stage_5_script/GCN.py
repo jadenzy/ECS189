@@ -40,6 +40,11 @@ if __name__ == '__main__':
 
     data = data_obj.load()
     graph = data['graph']
+    for i, (key, value) in enumerate(graph.items()):
+        if i >= 5:
+            break
+        print(f"Key: {key}, Value: {value}")
+
     train_idx = data['train_test_val']['idx_train']
     test_idx = data['train_test_val']['idx_test']
 
