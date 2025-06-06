@@ -16,10 +16,5 @@ class Evaluate_Accuracy(evaluate):
         recall = recall_score(y_true, y_pred, average='binary', zero_division=0)
         f1 = f1_score(y_true, y_pred, average='binary', zero_division=0)
 
-        try:
-            roc_auc = roc_auc_score(y_true, y_pred)
-        except ValueError:
-            roc_auc = float('nan')  # ROC AUC can't be computed if only one class is present
-
-        print(f'Accuracy: {acc:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}, F1-score: {f1:.4f}, ROC AUC: {roc_auc:.4f}')
-        return [acc, precision, recall, f1, roc_auc]
+        print(f'Accuracy: {acc:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}, F1-score: {f1:.4f}')
+        return [acc, precision, recall, f1]

@@ -99,8 +99,8 @@ class Method_RNN_Classification(method, nn.Module):
                 total_correct += (preds == batch_y).sum().item()
                 total += batch_y.size(0)
 
-            test_preds = self.test(self.data['test']['X'], vocab)
-            evaluator.data = {'true_y': self.data['test']['y'], 'pred_y': test_preds.numpy()}
+            test_preds = self.test(self.data['train']['X'], vocab)
+            evaluator.data = {'true_y': self.data['train']['y'], 'pred_y': test_preds.numpy()}
             acc, _, _, f1 = evaluator.evaluate()
             print(f"Epoch {epoch}: Accuracy={acc:.4f}, F1={f1:.4f}, Loss={total_loss/total:.4f}")
             loss_list.append(total_loss/total)
